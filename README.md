@@ -7,9 +7,9 @@
 
 本项目是文章《AI工具站拆解系列05：零基础复刻月访问 360 万的 Youtube 视频分析工具》的完整实现案例。
 
-**📝 博客原文：** <a href="https://ameng.blog/blog/ai-05-youtube-video-analysis" target="_blank">https://ameng.blog/blog/ai-05-youtube-video-analysis</a> （可方便看大图）
+**📝 博客原文：** <a href="https://ameng.blog/blog/ai-05-youtube-video-analysis" target="_blank" rel="noopener noreferrer">https://ameng.blog/blog/ai-05-youtube-video-analysis</a> （可方便看大图）
 
-**📱 微信公众号文章：** <a href="https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ" target="_blank">https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ</a>
+**📱 微信公众号文章：** <a href="https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ</a>
 
 ## 📞 关注公众号
 
@@ -20,7 +20,7 @@
 
 ## 🚀 在线体验
 
-**🔗 项目地址：** <a href="https://ameng-youtube-video.vercel.app" target="_blank">https://ameng-youtube-video.vercel.app</a>
+**🔗 项目地址：** <a href="https://ameng-youtube-video.vercel.app" target="_blank" rel="noopener noreferrer">https://ameng-youtube-video.vercel.app</a>
 
 ## ✨ 功能特性
 
@@ -99,13 +99,13 @@ yarn dev
 pnpm dev
 ```
 
-访问 <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> 查看应用。
+访问 <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">http://localhost:3000</a> 查看应用。
 
 ## 🔑 API 密钥获取指南
 
 ### YouTube Data API v3
 
-1. 访问 <a href="https://console.developers.google.com/" target="_blank">Google Cloud Console</a>
+1. 访问 <a href="https://console.developers.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>
 2. 创建新项目或选择现有项目
 3. 启用 YouTube Data API v3
 4. 创建凭据 → API 密钥
@@ -113,7 +113,7 @@ pnpm dev
 
 ### RapidAPI (字幕服务)
 
-1. 访问 <a href="https://rapidapi.com/" target="_blank">RapidAPI</a>
+1. 访问 <a href="https://rapidapi.com/" target="_blank" rel="noopener noreferrer">RapidAPI</a>
 2. 注册账号并登录
 3. 搜索 "YouTube Transcript" API
 4. 订阅服务（通常有免费额度）
@@ -121,7 +121,7 @@ pnpm dev
 
 ### OpenRouter (AI 分析)
 
-1. 访问 <a href="https://openrouter.ai/" target="_blank">OpenRouter</a>
+1. 访问 <a href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer">OpenRouter</a>
 2. 注册账号并登录
 3. 获取 API 密钥
 4. 将密钥填入 `OPENROUTER_API_KEY`
@@ -131,7 +131,7 @@ pnpm dev
 ### Vercel 部署（推荐）
 
 1. Fork 本仓库到你的 GitHub
-2. 访问 <a href="https://vercel.com" target="_blank">Vercel</a>
+2. 访问 <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel</a>
 3. 导入你的 GitHub 仓库
 4. 配置环境变量
 5. 部署完成
