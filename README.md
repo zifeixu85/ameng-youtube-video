@@ -2,11 +2,19 @@
 
 一个基于 AI 的 YouTube 视频内容分析工具，能够智能分析视频内容并提供专业的改进建议。
 
+## 📞 关注公众号
+
+**微信公众号：A梦进化论**
+
+<img src="https://ameng-image-upload.oss-cn-shanghai.aliyuncs.com/img/qrcode_for_gh_d4934fa7c031_258.jpg" width="200" alt="A梦进化论公众号二维码">
+
 ## 📖 相关文章
 
 本项目是文章《AI工具站拆解系列05：零基础复刻月访问 360 万的 Youtube 视频分析工具》的完整实现案例。
 
-**📝 阅读原文：** https://ameng.blog/blog/ai-05-youtube-video-analysis
+**📝 博客原文：** https://ameng.blog/blog/ai-05-youtube-video-analysis（可方便看大图）
+
+**📱 微信公众号文章：** https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ
 
 ## 🚀 在线体验
 
@@ -150,12 +158,6 @@ pnpm dev
 ## 📄 许可证
 
 本项目采用 MIT 许可证。
-
-## 📞 联系作者
-
-**微信公众号：A梦进化论**
-
-<img src="https://ameng-image-upload.oss-cn-shanghai.aliyuncs.com/img/qrcode_for_gh_d4934fa7c031_258.jpg" width="200" alt="A梦进化论公众号二维码">
 
 ---
 
