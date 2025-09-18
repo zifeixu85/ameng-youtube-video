@@ -1,7 +1,14 @@
 import { type NextRequest, NextResponse } from "next/server"
 
+const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY
+
 export async function POST(request: NextRequest) {
   try {
+    if (!RAPIDAPI_KEY) {
+      console.error("[v0] RapidAPI密钥未配置")
+      return NextResponse.json({ error: "服务配置错误：缺少RapidAPI密钥" }, { status: 500 })
+    }
+
     const { videoId } = await request.json()
 
     if (!videoId) {
@@ -14,7 +21,7 @@ export async function POST(request: NextRequest) {
       method: "GET",
       headers: {
         "x-rapidapi-host": "youtube-transcript3.p.rapidapi.com",
-        "x-rapidapi-key": "7f55334bfemshe9b2046b1397113p1e5b64jsnf3d42cbc3399",
+        "x-rapidapi-key": RAPIDAPI_KEY,
       },
     })
 

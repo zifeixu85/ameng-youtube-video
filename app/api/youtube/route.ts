@@ -1,9 +1,14 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-const YOUTUBE_API_KEY = "AIzaSyCId1M9bnEslmW5zSBDkPB3cnBEYjD-PPM"
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY
 
 export async function POST(request: NextRequest) {
   try {
+    if (!YOUTUBE_API_KEY) {
+      console.error("[v0] YouTube API密钥未配置")
+      return NextResponse.json({ error: "服务配置错误：缺少YouTube API密钥" }, { status: 500 })
+    }
+
     const { url } = await request.json()
 
     // 从YouTube URL中提取视频ID

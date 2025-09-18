@@ -1,9 +1,14 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-const OPENROUTER_API_KEY = "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"
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY
 
 export async function POST(request: NextRequest) {
   try {
+    if (!OPENROUTER_API_KEY) {
+      console.error("[v0] OpenRouter API密钥未配置")
+      return NextResponse.json({ error: "服务配置错误：缺少OpenRouter API密钥" }, { status: 500 })
+    }
+
     const { videoInfo } = await request.json()
 
     console.log("[v0] 开始AI分析，视频信息:", videoInfo.title)
@@ -59,7 +64,7 @@ ${videoInfo.subtitles ? `字幕内容：${videoInfo.subtitles.substring(0, 1000)
         Authorization: `Bearer ${OPENROUTER_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-pro",
+        model: "google/gemini-2.5-flash-lite",
         messages: [
           {
             role: "user",
@@ -67,6 +72,7 @@ ${videoInfo.subtitles ? `字幕内容：${videoInfo.subtitles.substring(0, 1000)
           },
         ],
         temperature: 0.7,
+        max_tokens: 32000,
       }),
     })
 

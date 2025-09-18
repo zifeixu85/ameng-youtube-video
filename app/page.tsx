@@ -108,7 +108,7 @@ export default function LandingPage() {
                 <div className="text-sm text-muted-foreground">视频已分析</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">95%</div>
+                <div className="text-2xl font-bold text-primary mb-1">99%</div>
                 <div className="text-sm text-muted-foreground">准确率</div>
               </div>
               <div className="text-center">

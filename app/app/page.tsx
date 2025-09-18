@@ -103,10 +103,25 @@ export default function AppPage() {
     const savedHistory = localStorage.getItem("youtube-analysis-history")
     if (savedHistory) {
       try {
-        setHistory(JSON.parse(savedHistory))
+        const parsedHistory = JSON.parse(savedHistory)
+        const validHistory = parsedHistory.filter(
+          (record: any) =>
+            record && record.id && record.videoInfo && record.analysis && typeof record.timestamp === "number",
+        )
+        setHistory(validHistory)
+
+        if (validHistory.length !== parsedHistory.length) {
+          localStorage.setItem("youtube-analysis-history", JSON.stringify(validHistory))
+        }
       } catch (error) {
         console.error("Failed to parse history:", error)
+        localStorage.removeItem("youtube-analysis-history")
       }
+    }
+
+    if (initialUrl && initialUrl.trim() && !isAnalyzing) {
+      console.log("[v0] Auto-analyzing URL from search params:", initialUrl)
+      handleAnalyze()
     }
   }, [])
 
@@ -119,10 +134,24 @@ export default function AppPage() {
       timestamp: Date.now(),
     }
 
-    const updatedHistory = [newRecord, ...history.slice(0, 9)] // 保留最近10条记录
+    const updatedHistory = [newRecord, ...history.slice(0, 9)]
     setHistory(updatedHistory)
     setSelectedHistoryId(newRecord.id)
-    localStorage.setItem("youtube-analysis-history", JSON.stringify(updatedHistory))
+
+    try {
+      localStorage.setItem("youtube-analysis-history", JSON.stringify(updatedHistory))
+      console.log("[v0] History saved successfully, total records:", updatedHistory.length)
+    } catch (error) {
+      console.error("[v0] Failed to save history to localStorage:", error)
+      try {
+        const reducedHistory = updatedHistory.slice(0, 5)
+        localStorage.setItem("youtube-analysis-history", JSON.stringify(reducedHistory))
+        setHistory(reducedHistory)
+        console.log("[v0] History saved with reduced size:", reducedHistory.length)
+      } catch (retryError) {
+        console.error("[v0] Failed to save reduced history:", retryError)
+      }
+    }
   }
 
   const loadFromHistory = (record: AnalysisHistory) => {
@@ -157,6 +186,7 @@ export default function AppPage() {
   const handleAnalyze = async () => {
     if (!url.trim()) return
 
+    console.log("[v0] Starting analysis for URL:", url)
     setIsAnalyzing(true)
     setError(null)
     setVideoInfo(null)
@@ -374,12 +404,6 @@ export default function AppPage() {
           </div>
 
           <div className="lg:col-span-3 space-y-6">
-            {/* Header */}
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground mb-2">YouTube 视频分析</h1>
-              <p className="text-muted-foreground">输入YouTube视频链接，获取专业的内容分析和改进建议</p>
-            </div>
-
             {/* Input Section */}
             <Card>
               <CardHeader>

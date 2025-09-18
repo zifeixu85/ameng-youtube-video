@@ -109,7 +109,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-muted-foreground">© 2024 YouTube 分析工具. 保留所有权利.</p>
+            <p className="text-xs text-muted-foreground">© 2025 YouTube 分析工具. 保留所有权利.</p>
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
               <Link href="#privacy" className="hover:text-foreground transition-colors">
                 隐私政策
