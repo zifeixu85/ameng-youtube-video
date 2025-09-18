@@ -11,11 +11,6 @@
 
 **📱 微信公众号文章：** <a href="https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/hmsSiahRVevbe8cdNFaeCQ</a>
 
-## 📞 关注公众号
-
-**微信公众号：A梦进化论**
-
-<img src="https://ameng-image-upload.oss-cn-shanghai.aliyuncs.com/img/qrcode_for_gh_d4934fa7c031_258.jpg" width="200" alt="A梦进化论公众号二维码">
 
 
 ## 🚀 在线体验
@@ -152,6 +147,13 @@ pnpm dev
 3. **查看结果** - 获得多维度评分和专业改进建议
 4. **查看字幕** - 点击查看字幕按钮获取视频字幕内容
 5. **历史记录** - 在左侧面板查看之前的分析记录
+
+## 📞 关注公众号
+
+**微信公众号：A梦进化论**
+
+<img src="https://ameng-image-upload.oss-cn-shanghai.aliyuncs.com/img/qrcode_for_gh_d4934fa7c031_258.jpg" width="200" alt="A梦进化论公众号二维码">
+
 
 ## 🤝 贡献
 
